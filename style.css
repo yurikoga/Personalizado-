@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #7ed6df, #4834d4); /* Gradiente de fundo */
+}
+
+.card {
+    background: #fff;
+    width: 450px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Ocultar o input radio original */
+.option input[type="radio"] {
+    display: none;
+}
+
+/* Estilo base da linha (Option) */
+.option {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: #e2e2e2; /* Cinza desativado */
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.course-name {
+    flex-grow: 1;
+    font-weight: 500;
+    color: #333;
+    margin-left: 15px;
+}
+
+.price {
+    font-weight: 400;
+    color: #333;
+}
+
+/* Estilo do Círculo (Dot) */
+.dot {
+    height: 22px;
+    width: 22px;
+    background: #bbb;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Quando o Radio está SELECIONADO */
+.option input[type="radio"]:checked + .dot {
+    background: #fff;
+    border: 6px solid #8e44ad; /* Roxo principal */
+}
+
+/* Alterar o fundo da linha quando selecionado */
+.option:has(input[type="radio"]:checked) {
+    background: #dcd1f9; /* Roxo claro */
+    border-color: #8e44ad;
+}
+
+/* Estilo alternativo para navegadores que não suportam :has (Opcional) */
+.option input[type="radio"]:checked ~ .course-name,
+.option input[type="radio"]:checked ~ .price {
+    color: #000;
+}
